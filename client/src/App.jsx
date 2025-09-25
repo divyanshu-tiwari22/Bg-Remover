@@ -5,10 +5,12 @@ import BuyCredit from './pages/BuyCredit'
 import Result from './pages/Result'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+// eslint-disable-next-line no-unused-vars
+import { ToastContainer, toast } from 'react-toastify';
 const App = () => {
   return (
     <div className='min-h-screen bg-slate-50'>
-
+    <ToastContainer position='botton-right' />
     <Navbar />
     <Routes>
       <Route path='/' element={<Home/>} />
