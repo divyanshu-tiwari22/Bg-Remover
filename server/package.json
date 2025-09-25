@@ -16,7 +16,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js"
