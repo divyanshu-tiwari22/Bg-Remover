@@ -14,7 +14,7 @@ const Navbar = () => {
   const { openSignIn } = useClerk()
   // eslint-disable-next-line no-unused-vars
   const { isSignedIn, user } = useUser()
-  // eslint-disable-next-line no-unused-vars, no-undef
+  // eslint-disable-next-line no-unused-vars
   const {credit, loadCreditsData } = useContext(AppContext)
 
   useEffect( () => {

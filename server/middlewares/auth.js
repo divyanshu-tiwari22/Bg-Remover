@@ -11,8 +11,15 @@ const authUser = async (req, res, next) => {
     }
 
     const token_decode = jwt.decode(token)
-    req.body.clerkId = token_decode.clerkId
+
+    if (!token_decode) {
+      return res.status(401).json({ success: false, message: "Invalid token" });
+    }
     
+    req.user = { id: token_decode.sub };
+    console.log("This is the output of the id in auth file" + req.user.id)
+
+    next()
 
   } catch (error) {
     console.log(error.message)
