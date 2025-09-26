@@ -6,18 +6,13 @@ const authUser = async (req, res, next) => {
   try{
 
     const { token } = req.headers
+
     if(!token) {
       return res.json({success: false, message: "Not authorised, try again"})
     }
 
     const token_decode = jwt.decode(token)
-
-    if (!token_decode) {
-      return res.status(401).json({ success: false, message: "Invalid token" });
-    }
-    
-    req.user = { id: token_decode.sub };
-    console.log("This is the output of the id in auth file" + req.user.id)
+    req.user.clerkId = token_decode.clerkId
 
     next()
 

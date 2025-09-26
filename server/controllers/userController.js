@@ -73,8 +73,8 @@ const clerkWebHooks = async (req, res) => {
 const userCredits = async (req, res) => {
   try {
 
-    //Here was an error that I took 30 minutes to debug. The error was that I was trying to assign a value to an object but I was doing req.body.clerkId instead of doing req.user.id as I am using webhooks and I have user as input.
-    const clerkId = req.user.id
+
+    const { clerkId } = req.body
 
     const userData = await userModel.findOne({clerkId})
 
