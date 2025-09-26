@@ -3,7 +3,7 @@ import{ useAuth, useClerk, useUser } from '@clerk/clerk-react'
 import { useState } from 'react'
 import { toast } from 'react-toastify'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { Form, useNavigate } from 'react-router-dom'
 // eslint-disable-next-line react-refresh/only-export-components
 export const AppContext = createContext()
 
@@ -51,6 +51,28 @@ const AppContextProvider = (props) => {
 
       navigate('/result')
 
+      // eslint-disable-next-line no-unused-vars
+      const token = await getToken()
+
+      const formData = new FormData()
+      image && formData.append('image', image)
+
+      const {data} = await axios.post(backendURL + "/api/image/remove-bg", formData, {
+        headers: {
+
+        }
+      })
+      if(data.success) {
+        setResultImage(data.resultImage)
+        data.creditBalance && setCredit(data.creditBalance)
+      } else {
+        toast.error(data.message)
+        data.creditBalance && setCredit(data.creditBalance)
+        if(data.creditBalance === 0) {
+          navigate('/buy')
+        }
+      }
+
     } catch(error) {
 
       console.log(error)
@@ -60,7 +82,7 @@ const AppContextProvider = (props) => {
   }
 
   const value = {
-    credit, setCredit, loadCreditsData, backendURL, image, setImage, removeBg
+    credit, setCredit, loadCreditsData, backendURL, image, setImage, removeBg, resultImage, setResultImage
   }
 
   return (
