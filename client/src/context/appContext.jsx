@@ -11,7 +11,7 @@ export const AppContext = createContext()
 const AppContextProvider = (props) => {
 
    
-  const [credit, setCredit ] = useState(false)
+  const [credit, setCredit ] = useState(0)
   const [image, setImage] = useState(false)
   // eslint-disable-next-line no-unused-vars
   const [resultImage, setResultImage] = useState(false)
@@ -27,13 +27,23 @@ const AppContextProvider = (props) => {
    
   const loadCreditsData = async () => {
     try{
+
       const token = await getToken()
+      console.log('Token received:', token)
+      console.log('Token type:', typeof token)
        
-      const {data} = await axios.get(backendURL + "/api/user/credits", {headers: { token }})
-      if(data.success) {
+      const {data} = await axios.get(backendURL + "/api/user/credits", {headers: {token : token}
+      })
+      console.log(data)
+
+      if(data.success) { 
+        console.log("Your data is success")
         setCredit(data.credits)
         console.log(data.credits)
+      } else {
+        console.log("Failure")
       }
+
     } catch(error) {
       console.log(error)
       toast.error(error.message)
@@ -59,9 +69,10 @@ const AppContextProvider = (props) => {
 
       const {data} = await axios.post(backendURL + "/api/image/remove-bg", formData, {
         headers: {
-
+          token : token
         }
       })
+      console.log(data)
       if(data.success) {
         setResultImage(data.resultImage)
         data.creditBalance && setCredit(data.creditBalance)

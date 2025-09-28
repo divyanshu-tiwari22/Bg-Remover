@@ -5,14 +5,19 @@ import jwt from 'jsonwebtoken'
 const authUser = async (req, res, next) => {
   try{
 
-    const { token } = req.headers
+    const token = req.headers.token
+    console.log(token)
 
     if(!token) {
       return res.json({success: false, message: "Not authorised, try again"})
+    } else{
+      console.log("Hello")
     }
 
     const token_decode = jwt.decode(token)
-    req.user.clerkId = token_decode.clerkId
+    req.body.clerkId = token_decode.clerkId
+
+    console.log(token_decode.clerkId)
 
     next()
 

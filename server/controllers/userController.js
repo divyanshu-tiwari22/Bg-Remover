@@ -31,7 +31,7 @@ const clerkWebHooks = async (req, res) => {
         photo: data.image_url
         }
         await userModel.create(userData)
-        console.log("Data added")
+        console.log(userData)
         res.json({})
 
         break;
@@ -74,9 +74,9 @@ const userCredits = async (req, res) => {
   try {
 
 
-    const { clerkId } = req.body
+    const clerkId = req.body
 
-    const userData = await userModel.findOne({clerkId})
+    const userData = await userModel.findOne(clerkId)
 
     res.json({success: true, credits: userData.creditBalance })
 
