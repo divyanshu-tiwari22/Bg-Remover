@@ -1,24 +1,20 @@
 import jwt from 'jsonwebtoken'
-import { verifyToken } from '@clerk/backend'
 
 // Middleware function to decode jwt token to get clerkId
 
 const authUser = async (req, res, next) => {
   try{
-
-    const token = req.headers.token
+    req.body = {};
+    const { token } = req.headers
 
     if(!token) {
       return res.json({success: false, message: "Not authorised, try again"})
-    } else{
-      console.log("Hello")
     }
 
-    const token_decode = await verifyToken(token, {
-      secretKey: process.env.CLERK_SECRET_KEY
-    })
+    const token_decode = jwt.decode(token)
 
-    req.body.clerkId = token_decode.clerkId 
+    req.body.clerkId = token_decode.clerkId
+
     next()
 
   } catch (error) {
@@ -27,4 +23,4 @@ const authUser = async (req, res, next) => {
   }
 }
 
-export default authUser
+export {authUser}

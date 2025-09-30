@@ -21,8 +21,7 @@ const clerkWebHooks = async (req, res) => {
 
     switch(type) {
       case "user.created" : {
-        
-        
+
         const userData = {
         clerkId: data.id,
         email: data.email_addresses[0].email_address,
@@ -44,7 +43,7 @@ const clerkWebHooks = async (req, res) => {
         lastName: data.last_name,
         photo: data.image_url
         }
-        await userModel.findOneAndUpdate({clerkId: data.id}, userData)
+        await userModel.findOneAndUpdate({clerkId:data.id}, userData)
         console.log("Data updated")
         res.json({})
 
@@ -52,7 +51,7 @@ const clerkWebHooks = async (req, res) => {
       }
       case "user.deleted": {
 
-        await userModel.findOneAndDelete({clerkId: data.id})
+        await userModel.findOneAndDelete({clerkId:data.id})
         console.log("Data deleted")
         res.json({})
 
@@ -74,11 +73,11 @@ const userCredits = async (req, res) => {
   try {
 
 
-    const clerkId = req.body.clerkId
+    const { clerkId } = req.body
 
-    const userData = await userModel.findOne(clerkId)
+    const userData = await userModel.findOne({clerkId})
 
-    res.json({success: true, credits: userData.creditBalance })
+    res.json({success:true, credits:userData.creditBalance })
 
   } catch(error) {
 
