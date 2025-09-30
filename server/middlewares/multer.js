@@ -1,4 +1,4 @@
-import multer from "multer";
+import multer from 'multer';
 
 // creating multer middleware for passing formdata
 
