@@ -23,7 +23,7 @@ const Navbar = () => {
     if(isSignedIn) {
       loadCreditsData()
     }
-  }, [isSignedIn, loadCreditsData])
+  })
 
   return (
     <div className='flex items-center justify-between mx-4 py-3 lg:mx-44'>

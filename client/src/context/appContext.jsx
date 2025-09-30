@@ -32,7 +32,9 @@ const AppContextProvider = (props) => {
       console.log('Token received:', token)
       console.log('Token type:', typeof token)
        
-      const {data} = await axios.get(backendURL + "/api/user/credits", {headers: {token : token}
+      const {data} = await axios.get(backendURL + "/api/user/credits", {headers: {
+        token : token
+      }
       })
       console.log(data)
 
