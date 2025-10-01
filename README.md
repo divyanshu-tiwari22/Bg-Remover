@@ -1,4 +1,4 @@
-# bg.removal - Background Removal Web App
+# bg.removal - AI Powered Background Remover App
 
 bg.removal is a modern, full-stack web application that enables users to remove image backgrounds quickly and seamlessly. It offers a clean user interface built with **React.js** and **Tailwind CSS**, robust backend support with **Node.js** and **Express.js**, and data persistence using **MongoDB**.
 
