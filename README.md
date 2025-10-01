@@ -98,12 +98,23 @@ npm install
 
 #### 3. Environment Variables
 
+Create a `.env` file inside the  `client/` with the following:
+
+```
+env
+VITE_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+VITE_BACKEND_URL=`http://localhost:4000`
+
+```
+
 Create a `.env` file inside `server/` with the following:
 
 ```
 env
 PORT=4000
 MONGO_URI=your_mongodb_atlas_connection_string
+CLERK_WEBHOOK_SECRET=your_clerk_webhook_secret
+CLIPDROP_API=your_clipdrop_api
 ```
 
 #### 4. Run the app
@@ -113,7 +124,8 @@ MONGO_URI=your_mongodb_atlas_connection_string
 ```
 bash
 cd server
-npm run dev
+node - npm run dev
+nodemon - npm run server
 ```
 
 **Frontend:**
@@ -121,7 +133,7 @@ npm run dev
 ```
 bash
 cd client
-npm start
+npm start or npm run dev
 ```
 
 ---
