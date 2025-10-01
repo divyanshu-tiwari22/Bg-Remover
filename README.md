@@ -164,7 +164,7 @@ Clerk handles all the heavy lifting for user identity, making it easy to integra
 
 ---
 
-## 📦 Deployment
+##  Deployment
 
 - **Frontend:** Deployed on [Vercel](https://vercel.com/)
 - **Backend:** Deploy using [Vercel](https://vercel.com/)
