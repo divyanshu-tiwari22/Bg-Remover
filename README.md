@@ -138,23 +138,23 @@ npm start or npm run dev
 
 ---
 
-## 🖼️ Image Processing
+##  Image Processing
 
 The backend uses a third-party API or algorithm to remove image backgrounds. Ensure the service or logic is implemented in the backend route handling image uploads.
 
 ---
 
-## 📁 File Upload Handling
+##  File Upload Handling
 
 Uses `Multer` to handle image uploads and sends files to the background removal API or processing logic before saving metadata in MongoDB.
 
 ---
 
-## 🔐 Authentication with Clerk
+##  Authentication with Clerk
 
 bg.removal integrates [Clerk](https://clerk.com) for secure and seamless user authentication.
 
-### ✨ Authentication Features:
+### Authentication Features:
 - 👤 User sign-up and sign-in with email/password or OAuth providers
 - 🔐 Secure session management with automatic token refresh
 - 🚪 User logout with session termination
@@ -171,18 +171,12 @@ Clerk handles all the heavy lifting for user identity, making it easy to integra
 
 ---
 
-## 🙌 Contributing
+## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you’d like to change.
 
 ---
 
-## 📄 License
-
-This project is licensed under the MIT License.
-
----
-
-## 📧 Contact
+## Contact
 
 Created by [divyanshu-tiwari22](https://github.com/divyanshu-tiwari22)
