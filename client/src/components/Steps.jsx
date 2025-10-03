@@ -13,21 +13,21 @@ const Steps = () => {
           <img className='max-w-9' src={assets.upload_icon} alt='' />
           <div>
             <p className='text-xl font-medium'>Upload Image</p>
-            <p className='text-sm text-neutral-500'>This is a demo text, will replace it later.<br/> This is a demo.</p>
+            <p className='text-sm text-neutral-500'>Upload your images here.<br/> Click and see the magic.</p>
           </div>
         </div>
         <div className='flex items-start gap-4 bg-white border drop-shadow-md p-5 pb-8 rounded hover:scale-105 transition-all duration-500'>
           <img className='max-w-9' src={assets.remove_bg_icon } alt='' />
           <div>
             <p className='text-xl font-medium'>Remove Background</p>
-            <p className='text-sm text-neutral-500'>This is a demo text, will replace it later.<br/> This is a demo.</p>
+            <p className='text-sm text-neutral-500'>Removing background has never<br/> been this simple</p>
           </div>
         </div>
         <div className='flex items-start gap-4 bg-white border drop-shadow-md p-5 pb-8 rounded hover:scale-105 transition-all duration-500'>
           <img className='max-w-9' src={assets.download_icon} alt='' />
           <div>
             <p className='text-xl font-medium'>Download Image</p>
-            <p className='text-sm text-neutral-500'>This is a demo text, will replace it later.<br/> This is a demo.</p>
+            <p className='text-sm text-neutral-500'>Easy download so that you can<br/> take your magic with you.</p>
           </div>
         </div>
       </div>

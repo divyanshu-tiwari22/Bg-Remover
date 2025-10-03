@@ -18,9 +18,8 @@ const Header = () => {
           from <br /> images for free.
         </h1>
         <p className="my-6 text-[15px] text-gray-500">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. <br className="max-sm:hidden" /> Lorem Ipsum has been the
-          industry's standard dummy text ever.
+          Want to get rid of that ugly background? <br className="max-sm:hidden" /> 
+          You're just a click away from doing it...
         </p>
         <div>
           <input onChange = { e => removeBg(e.target.files[0])} type="file" accept='image/*' id="upload1" hidden />
